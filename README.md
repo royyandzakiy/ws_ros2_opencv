@@ -16,8 +16,8 @@ source: [Interface and Use Camera in ROS2 (Iron Irwini) and OpenCV - Write Publi
 > - it then gets published to the topic `camera_image_topic`
 
 - `cd ws_ros2_opencv`
-- `source /opt/ros/iron/setup.bash`
-- `source install/setup.bash`
+- `source /opt/ros/iron/setup.bash` setup underlay environment of ros2 iron irwini
+- `source install/setup.bash` setup overlay environment unique to the project ws_ros2_opencv
 - `colcon build`
 - `ros2 run ros2_opencv image_publisher_node` 
     > - explanation: `ros2_opencv` is the package name registered in `package.xml`, `image_publisher_node` us a node defined in `src/ros2_opencv/setup.py` and registered using the command `colcon build`
@@ -26,7 +26,7 @@ source: [Interface and Use Camera in ROS2 (Iron Irwini) and OpenCV - Write Publi
 > - this will act as a node to receive sent images from the image_publisher_node
 > - it recieves images by subcribing to the topic `camera_image_topic`
 - `cd ws_ros2_opencv`
-- `source /opt/ros/iron/setup.bash`
-- `source install/setup.bash`
+- `source /opt/ros/iron/setup.bash` setup underlay environment of ros2 iron irwini
+- `source install/setup.bash` setup overlay environment unique to the project ws_ros2_opencv
 - `ros2 run ros2_opencv image_subscriber_node`
     > - explanation: same as before, `image_subscriber_node` us a node defined in `src/ros2_opencv/setup.py`
