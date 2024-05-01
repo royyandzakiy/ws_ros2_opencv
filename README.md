@@ -10,19 +10,24 @@ source: [Interface and Use Camera in ROS2 (Iron Irwini) and OpenCV - Write Publi
 
 - `git clone https://github.com/royyandzakiy/ws_ros2_opencv` clone repository 
 
-##### terminal #1: image_publisher_node
-> - this will act as a node to capture image from the chosen camera or video device
-> - the captured image then be converted to ROS imgmsg type
-> - it then gets published to the topic `camera_image_topic`
+### Terminal #1: image_publisher_node
+    
+> this will act as a node to capture image from the chosen camera or video device. the captured image then be converted to ROS `imgmsg` type. it then gets published to the topic `camera_image_topic`
 
 - `cd ws_ros2_opencv`
-- `source /opt/ros/iron/setup.bash` setup underlay environment of ros2 iron irwini
-- `source install/setup.bash` setup overlay environment unique to the project ws_ros2_opencv
-- `colcon build`
-- `ros2 run ros2_opencv image_publisher_node` 
-    > - explanation: `ros2_opencv` is the package name registered in `package.xml`, `image_publisher_node` us a node defined in `src/ros2_opencv/setup.py` and registered using the command `colcon build`
+- setup underlay environment of ros2 iron irwini
+    
+    `source /opt/ros/iron/setup.bash`
+- setup overlay environment unique to the project ws_ros2_opencv
 
-##### terminal #2: image_subscriber_node
+    `source install/setup.bash` 
+- `colcon build`
+- run node
+
+    `ros2 run ros2_opencv image_publisher_node` 
+    > explanation: `ros2_opencv` is the package name registered in `package.xml`, `image_publisher_node` us a node defined in `src/ros2_opencv/setup.py` and registered using the command `colcon build`
+
+##### Terminal #2: image_subscriber_node
 > - this will act as a node to receive sent images from the image_publisher_node
 > - it recieves images by subcribing to the topic `camera_image_topic`
 - `cd ws_ros2_opencv`
