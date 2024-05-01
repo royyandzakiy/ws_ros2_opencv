@@ -9,7 +9,7 @@ source: [Interface and Use Camera in ROS2 (Iron Irwini) and OpenCV - Write Publi
 ## Getting Started
 - `git clone https://github.com/royyandzakiy/ws_ros2_opencv` clone repository 
 
-### Terminal #1: image_publisher_node
+### Node #1: Image Capture & Publish
 > - this will act as a node to capture image from the chosen camera or video device
 > - the captured image then be converted to ROS `imgmsg` type
 > - it then gets published to the topic `camera_image_topic`
@@ -21,10 +21,11 @@ source: [Interface and Use Camera in ROS2 (Iron Irwini) and OpenCV - Write Publi
 - `ros2 run ros2_opencv image_publisher_node` run node
     > explanation: `ros2_opencv` is the package name registered in `package.xml`. `image_publisher_node` is a node defined in `src/ros2_opencv/setup.py`, which is then registered using the command `colcon build`
 
-### Terminal #2: image_subscriber_node
+### Node #2: Image Subcribe
 > - this will act as a node to receive sent images from the `image_publisher_node`
 > - it recieves images by subcribing to the topic `camera_image_topic`
 
+- open a new terminal
 - `cd ws_ros2_opencv`
 - `source /opt/ros/iron/setup.bash` 
 - `source install/setup.bash` 
